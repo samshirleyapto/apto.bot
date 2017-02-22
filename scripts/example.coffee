@@ -10,8 +10,6 @@
 
 module.exports = (robot) ->
 
-
-
   robot.hear /@nefsky WFH/i, (res) ->
     res.send "Days since @nefsky has worked from home: 0"
 
@@ -40,7 +38,7 @@ module.exports = (robot) ->
      res.send "#{res.message.text}? That's a Paddlin'"
 
 
-   enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
+   enterReplies = ['Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
    leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
 
    robot.enter (res) ->
@@ -97,7 +95,7 @@ module.exports = (robot) ->
      if res?
        res.reply "DOES NOT COMPUTE"
 
-   robot.respond /have a soda/i, (res) ->
+   robot.hear /have a soda/i, (res) ->
      # Get number of sodas had (coerced to a number).
      sodasHad = robot.brain.get('totalSodas') * 1 or 0
 
