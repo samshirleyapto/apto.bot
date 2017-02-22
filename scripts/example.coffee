@@ -10,7 +10,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /WFH/i, (res) ->
+  robot.hear /@nefsky WFH/i, (res) ->
     res.send "Days since @nefsky has worked from home: 0"
 
    robot.hear /badger/i, (res) ->
