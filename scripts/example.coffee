@@ -10,8 +10,13 @@
 
 module.exports = (robot) ->
 
+  var lastWFH = new Date()
+
   robot.hear /@nefsky WFH/i, (res) ->
-    res.send "Days since @nefsky has worked from home: 0"
+    res.send "Days since @nefsky has worked from home: 0 days"
+
+  robot.hear /cupcakes/i, (res) ->
+    res.send "Are those YOUR cupcakes?"
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
