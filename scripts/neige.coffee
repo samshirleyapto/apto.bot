@@ -46,10 +46,10 @@ i18n = {
 
 module.exports = (robot) ->
 
-  robot.respond /neige (.*)/i, (msg) ->
+  robot.hear /neige (.*)/i, (msg) ->
      inform(robot, msg, 'neige', msg.match[1])
 
-  robot.respond /snow (.*)/i, (msg) ->
+  robot.hear /snow (.*)/i, (msg) ->
     inform(robot, msg, 'snow', msg.match[1])
 
 
