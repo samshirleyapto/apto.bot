@@ -31,7 +31,7 @@ module.exports = (robot) ->
 
    lulz = ['lol', 'rofl', 'lmao']
 
-   robot.respond /lulz/i, (res) ->
+   robot.hear /lulz/i, (res) ->
      res.send res.random lulz
 
    robot.topic (res) ->
