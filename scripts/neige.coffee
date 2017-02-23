@@ -35,7 +35,7 @@ i18n = {
       url: 'http://www.onthesnow.com/united-states/skireport.html',
       intro: (name) -> '*** Snow report for ' + name + ' ***',
       state: (state) -> 'Snow report down - up : ' + state,
-      fall: (snowFall24h) -> 'Snowfall !! : ' + snowFall24h + ' of snow yesterday',
+      fall: (snow24h) -> 'Snowfall !! : ' + snow24h + ' of snow yesterday',
       lifts: (lifts) -> 'Lifts: ' + lifts,
       slopes: (slopes) -> 'Slopes: ' + slopes
     }
@@ -46,7 +46,7 @@ i18n = {
 
 module.exports = (robot) ->
 
-  robot.hear /neige (.*)/i, (msg) ->
+  robot.respond /neige (.*)/i, (msg) ->
      inform(robot, msg, 'neige', msg.match[1])
 
   robot.hear /snow (.*)/i, (msg) ->
@@ -83,11 +83,11 @@ inform = (robot, msg, keyword, resortQuery) ->
      snowFallElements = $(row).find('.rLeft.b b')
      snowFall = ($(el).text() for el in snowFallElements)
 
-     snowFall24h = snowFall[0]
-     snowFall72h = snowFall[1]
+     snow24h = snowFall[0]
+     snow72h = snowFall[1]
 
-     unless snowFall24h.match(/\d+/)[0] == "0"
-       messages.push lang.fall(snowFall24h)
+     unless snow24h.match(/\d+/)[0] == "0"
+       messages.push lang.fall(snow24h)
 
      liftsAndSlopes = $(row).find('.rMid').filter (i, el) ->
         return $(this).text().match(/\d+\/\d+/)
