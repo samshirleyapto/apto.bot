@@ -13,8 +13,8 @@ module.exports = (robot) ->
   robot.hear /@nefsky WFH/i, (res) ->
     res.send "Days since @nefsky has worked from home: 0"
 
-  robot.hear /cupcakes/i, (res) ->
-    res.send "Whose cupcakes did you steal today?"
+  robot.hear /donald trump/i, (res) ->
+    res.send "http://i.imgur.com/YMC6hSf.gif"
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
