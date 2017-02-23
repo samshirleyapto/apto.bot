@@ -61,15 +61,15 @@ module.exports = (robot) ->
 
    annoyIntervalId = null
 
-   robot.hear /annoy me/, (res) ->
+   robot.hear /troll this channel/, (res) ->
      if annoyIntervalId
-       res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
+       res.send "https://media.giphy.com/media/5xtDarEbygs3Pu7p3jO/giphy.gif"
        return
 
      res.send "Hey, want to hear the most annoying sound in the world?"
      annoyIntervalId = setInterval () ->
-       res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
-     , 1000
+       res.send "https://media.giphy.com/media/5xtDarEbygs3Pu7p3jO/giphy.gif"
+     , 100
 
    robot.respond /unannoy me/, (res) ->
      if annoyIntervalId
