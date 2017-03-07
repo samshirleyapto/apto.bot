@@ -13,6 +13,9 @@ module.exports = (robot) ->
   robot.hear /@nefsky WFH/i, (res) ->
     res.send "Days since @nefsky has worked from home: 0"
 
+  robot.hear /@nefsky sick/i, (res) ->
+    res.send "https://media.giphy.com/media/nhklNniaxTXoI/giphy.gif"
+
   robot.hear /donald trump/i, (res) ->
     res.send "http://i.imgur.com/YMC6hSf.gif"
 
