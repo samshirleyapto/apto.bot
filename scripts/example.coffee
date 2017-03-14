@@ -13,6 +13,9 @@ module.exports = (robot) ->
   robot.hear /@nefsky WFH/i, (res) ->
     res.send "Days since @nefsky has worked from home: 0"
 
+  robot.hear /DEPLOY!/i, (res) ->
+    res.send "https://media.giphy.com/media/GwRBmXyEOvFtK/giphy.gif"
+
   robot.hear /@nefsky sick/i, (res) ->
     res.send "https://media.giphy.com/media/nhklNniaxTXoI/giphy.gif"
 
@@ -44,13 +47,7 @@ module.exports = (robot) ->
      res.send "#{res.message.text}? That's a Paddlin'"
 
 
-   enterReplies = ['Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
-   leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
 
-   robot.enter (res) ->
-     res.send res.random enterReplies
-   robot.leave (res) ->
-     res.send res.random leaveReplies
 
    answer = process.env.HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING
 
